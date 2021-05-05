@@ -8,6 +8,7 @@ class Reader < ActiveRecord::Base
 
     def total_subcription_price
         self.subscriptions.sum {|sub| sub.price}
+        # self.subscriptions.sum(:price)    # Can also do this
     end
 
     def cancel_subscription(magazine)
